@@ -35,7 +35,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "WAuth\\": "packages/w-auth/src/"
         },
         "classmap": [
             "database/seeds",

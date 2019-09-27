@@ -45,7 +45,7 @@ class AuthTest extends TestCase
 
     /** @test */
     public function it_will_not_register_a_user(){
-        $response = $this->post('api/register', [
+        $response = $this->json('POST', 'api/register', [
             'email'    => 'wagner.mattei@gmail.com',
             'password' => '123456',
         ]);

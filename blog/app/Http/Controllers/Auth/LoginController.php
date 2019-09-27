@@ -42,26 +42,28 @@ class LoginController extends Controller
     /**
      * Login
      */
-    public function login(Request $request)
+    public function _login(Request $request)
     {
 
-        $validate = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ], 
-        [
-            'required' => 'O campo :attribute é obrigatório',
-            'unique' => 'O campo :attribute já está em uso.'
-        ], 
-        [
-            'password' => 'senha'
-        ]);
-        
+        $validate = $request->validate(
+            [
+                'email' => 'required|email',
+                'password' => 'required',
+            ],
+            [
+                'required' => 'O campo :attribute é obrigatório',
+                'unique' => 'O campo :attribute já está em uso.'
+            ],
+            [
+                'password' => 'senha'
+            ]
+        );
+
         $credentials = request(['email', 'password']);
 
 
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (!$token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Bad Credentials'], 401);
         }
 
         return $this->respondWithToken($token);
@@ -69,7 +71,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        if (!$request->headers->has('Authorization')){
+        if (!$request->headers->has('Authorization')) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -81,11 +83,17 @@ class LoginController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
-            'message' => 'Bem vindo!', 
-            'data' =>[
+            'message' => 'Bem vindo!',
+            'data' => [
                 'access_token' => $token,
                 'token_type'   => 'bearer',
                 'expires_in'   => auth()->factory()->getTTL() * 60
-            ]]);
+            ]
+        ]);
+    }
+
+    protected function guard()
+    {
+        return \Auth::guard('web');
     }
 }
