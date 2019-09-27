@@ -1,0 +1,11 @@
+{
+    "name": "wagner/w-auth",
+    "description": "",
+    "authors": [
+        {
+            "name": "Wagner Mattei",
+            "email": "wagner.mattei@gmail.com"
+        }
+    ],
+    "require": {}
+}
