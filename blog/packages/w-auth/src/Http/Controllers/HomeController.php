@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace WAuth\Http\Controllers;
 
-use Illuminate\Http\Request;
+use WAuth\Http\Helpers\WResponse;
 
 class HomeController extends Controller
 {
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -22,8 +22,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            'message' => 'Home'
-        ]);
+        return WResponse::collection([['foo' => 'bar']], 'foo, bar', ['page' => 0]);
     }
 }

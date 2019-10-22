@@ -14,6 +14,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
@@ -146,6 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568985452870</updated>
       <workItem from="1568985463900" duration="5356000" />
+      <workItem from="1569636813524" duration="9000" />
     </task>
     <servers />
   </component>

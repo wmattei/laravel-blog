@@ -22,10 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  * Garante tentativas maximas de 5
  */
 Route::middleware('throttle:2,1')->group(function () {
-    Route::post('/register', 'Auth\RegisterController@create'); // TODO reduzir o caminho
-    Route::post('/login', 'Auth\LoginController@login');
-    Route::post('/logout', 'Auth\LoginController@logout');
+    // Route::post('/register', 'Auth\RegisterController@create'); // TODO reduzir o caminho
+    // Route::post('/login', 'Auth\LoginController@login');
+    // Route::post('/logout', 'Auth\LoginController@logout');
 });
 
 //Home
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
