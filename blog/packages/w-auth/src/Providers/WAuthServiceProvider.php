@@ -9,7 +9,7 @@ use Wauth\Http\Helpers\WResponse;
 
 class WAuthServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'WAuth';
+    protected $namespace = 'WAuth\Http\Controllers';
 
     /**
      * Register services.

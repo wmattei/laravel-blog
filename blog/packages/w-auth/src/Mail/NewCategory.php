@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Mail;
+namespace WAuth\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ResetPassword extends Mailable
+class NewCategory extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    private $email;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($email)
+    public function __construct()
     {
-        $this->email = $email;
+        //
     }
 
     /**
@@ -29,6 +28,9 @@ class ResetPassword extends Mailable
      */
     public function build()
     {
-        return $this->view('auth.passwords.email');
+//        view()->addNamespace('wview', base_path('/packages/w-auth/views'));
+        $view = $this->markdown('mail.new_category_email');
+//        dd($view->);
+        return $view;
     }
 }

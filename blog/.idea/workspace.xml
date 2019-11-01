@@ -112,6 +112,8 @@
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
     </include_path>
   </component>
   <component name="ProjectId" id="1R6RF7ioq16r44Uf6YPJ2xaAMMC" />
@@ -130,8 +132,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/w-auth/src" />
+      <recent name="$PROJECT_DIR$/packages/w-auth/Mail" />
+      <recent name="$PROJECT_DIR$/packages/w-auth/src/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/packages/w-auth/src/Http" />
       <recent name="$PROJECT_DIR$/packages/w-auth/src/Http/Helpers" />
-      <recent name="$PROJECT_DIR$/packages/w-auth/src/Http/Helpers/Facades" />
     </key>
   </component>
   <component name="RunDashboard">

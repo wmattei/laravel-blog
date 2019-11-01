@@ -16,8 +16,8 @@ class Category extends Migration
         Schema::create('category', function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('name')->nullable(false);
-            $table->string('description');
-            $table->string('file_path');
+            $table->string('description')->nullable(true);
+            $table->string('file_path')->nullable(true);
             $table->timestamps();
         });
     }

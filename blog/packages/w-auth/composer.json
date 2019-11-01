@@ -9,6 +9,9 @@
     ],
     "require": {},
     "autoload": {
+        "psr-4": {
+            "Domain\\": "Domain/"
+        },
         "files": [
             "src/Helpers/wauth.php"
         ]
