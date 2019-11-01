@@ -15,6 +15,7 @@ return [
 
     'paths' => [
         resource_path('views'),
+        app()->basePath().'/packages/w-auth/views',
     ],
 
     /*
