@@ -11,7 +11,7 @@ class WResponse extends Facade
         return 'wresponse';
     }
 
-    protected static function error($code, $message)
+    public static function error($code, $message)
     {
         return response()->json([
             'error' => $message,
@@ -19,7 +19,7 @@ class WResponse extends Facade
         ]);
     }
 
-    protected static function token($token, $message)
+    public static function token($token, $message)
     {
         return response()->json([
             'message' => $message,
@@ -31,15 +31,16 @@ class WResponse extends Facade
         ]);
     }
 
-    protected static function item($item, $includes)
+    public static function item($item, $includes, $message)
     {
         return response()->json([
+            'message' => $message,
             'data' => $item,
             'includes' => $includes
         ]);
     }
 
-    protected static function collection($collection, $includes, $meta)
+    public static function collection($collection, $includes, $meta)
     {
         return response()->json([
             'data' => $collection,

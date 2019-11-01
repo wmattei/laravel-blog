@@ -6,9 +6,10 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Route;
 use Wauth\Http\Helpers\WResponse;
 
+
 class WAuthServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'WAuth\Http\Controllers';
+    protected $namespace = 'WAuth';
 
     /**
      * Register services.
@@ -17,7 +18,7 @@ class WAuthServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('wresponse', function () {
+        $this->app->singleton('wresponse', function () {
 
             return new WResponse();
         });

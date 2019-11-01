@@ -1,14 +1,12 @@
 <?php
-class WAuth
-{
-
-    public static function user()
-    {
+if (!function_exists('wUser')){
+    function wUser(){
         return auth()->user();
     }
-
-    public static function isAdmin()
+}
+if (!function_exists('(')) {
+    function wIsAdmin()
     {
-        return auth()->user()->isAdmin();
+        return auth()->user()->is_admin;
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
@@ -21,12 +22,14 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+
+
     public function setPasswordAttribute($password)
     {
         if ( !empty($password) ) {
             $this->attributes['password'] = bcrypt($password);
         }
-    }  
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -54,4 +57,6 @@ class User extends Authenticatable implements JWTSubject
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }

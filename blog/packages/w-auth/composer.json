@@ -7,5 +7,10 @@
             "email": "wagner.mattei@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "files": [
+            "src/Helpers/wauth.php"
+        ]
+    }
 }
